@@ -51,11 +51,29 @@
                 discord: ari.s.games
             </li>
             <li>
-                e-mail: <a href="mailto:hello@ari-s.com">hello@ari-s.com</a> or <a
-                    href="mailto:aristotle@ucsd.edu">aristotle@ucsd.edu</a>
+                <noscript>e-mail: <a href="mailto:hello@ari-s.com">hello@ari-s.com</a> or <a
+                        href="mailto:aristotle@ucsd.edu">aristotle@ucsd.edu</a></noscript>
+                <script>
+                    (() => {
+                        const emails = [
+                            "aristotle@ucsd.edu",
+                            "astassin@ucsd.edu",
+                            "astassinopoulos@ucsd.edu",
+                            "beanie@ucsd.edu",
+                            "beef@ucsd.edu",
+                            "cabbage@ucsd.edu",
+                            "grains@ucsd.edu",
+                            "stassinopoulos@ucsd.edu",
+                            "tacos@ucsd.edu"
+                        ],
+                            index = Math.floor(Math.random() * emails.length);
+                        document.write('e-mail: <a href="mailto:hello@ari-s.com">hello@ari-s.com</a> or <a href="mailto:' + emails[index] + '" id="dynamicemail">' + emails[index] + '</a>');
+                    })();
+                </script>
             </li>
         </ul>
     </section>
 </body>
+
 
 </html>
