@@ -30,6 +30,13 @@
             ul {
                 padding-left: 0;
             }
+            li {
+                transition: background-color 1s;
+            }
+            li.highlight {
+                background-color: yellow;
+                transition: 0s;
+            }
         </style>
         <link
             rel="apple-touch-icon"
@@ -63,6 +70,14 @@
                 howdy! i am an mscs student at willamette. i have a degree in
                 data science from uc san diego. i enjoy running, biking,
                 embroidery, and going on walks.
+            </p>
+            <p>
+                <b>i am looking for work as a software engineer.</b> are you
+                hiring?
+                <a id="highlight-email" href="mailto:hello@ari-s.com"
+                    >e-mail me</a
+                >
+                for my résumé—i look forward to meeting you.
             </p>
         </section>
         <section id="home-links">
@@ -100,7 +115,7 @@
                     bereal:
                     <a href="https://bere.al/stassinopoulos">stassinopoulos</a>
                 </li>
-                <li>
+                <li id="email">
                     <noscript
                         >e-mail:
                         <a href="mailto:hello@ari-s.com">hello@ari-s.com</a> or
@@ -134,6 +149,21 @@
                                     emails[index] +
                                     "</a>",
                             );
+                            highlightEmail = () => {
+                                document
+                                    .querySelector("#email")
+                                    .classList.add("highlight");
+                                setTimeout(
+                                    () =>
+                                        document
+                                            .querySelector("#email")
+                                            .classList.remove("highlight"),
+                                    1000,
+                                );
+                                return false;
+                            };
+                            document.querySelector("#highlight-email").onclick =
+                                highlightEmail;
                         })();
                     </script>
                 </li>
